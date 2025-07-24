@@ -1,0 +1,39 @@
+/*!
+Theme Name: LofyGame Template
+Description: A Poki.com-inspired gaming theme with game embedding functionality
+Version: 2.0
+Author: Your Name
+*/
+
+/* ============================================================================
+   IMPORT ALL CSS FILES
+   ============================================================================ */
+
+/* Core Styles */
+@import url('assets/css/global.css');
+@import url('assets/css/header.css');
+@import url('assets/css/footer.css');
+
+/* Component Styles */
+@import url('assets/css/game-card.css');
+@import url('assets/css/pagination.css');
+@import url('assets/css/blog.css');
+
+/* Layout Styles */
+@import url('assets/css/grid.css');
+@import url('assets/css/categories.css');
+@import url('assets/css/archive.css');
+@import url('assets/css/single-game.css');
+
+/* Feature Styles */
+@import url('assets/css/rating.css');
+
+/* Utility Styles */
+@import url('assets/css/utilities.css');
+@import url('assets/css/responsive.css');
+
+/* ============================================================================
+   THEME SPECIFIC OVERRIDES (If needed)
+   ============================================================================ */
+
+/* Add any theme-specific CSS overrides here */

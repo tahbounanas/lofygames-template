@@ -1,0 +1,734 @@
+/*!
+Single Game Page Styles
+*/
+
+/* Poki-Style Layout */
+.poki-style-layout {
+    background: #00d4d4;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.single-game-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Enhanced Game Header */
+.game-header {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 2rem;
+    background: var(--gradient);
+    color: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-header-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.rating-stars-header {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.star-header {
+    font-size: 1.5rem;
+    color: #ddd;
+    transition: all 0.3s ease;
+}
+
+.star-header.filled {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.rating-info-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-score-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffa500;
+}
+
+.rating-count-header {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.game-header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.meta-item {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Main Game Area - 3 Column Layout */
+.poki-game-area {
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: start;
+}
+
+/* Side Game Columns */
+.left-games-column,
+.right-games-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poki-game-item {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.poki-game-item .game-card.minimal-card {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.poki-game-item .game-card.minimal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+/* Main Game Container */
+.poki-main-game {
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Game Player Area */
+.poki-game-player {
+    position: relative;
+}
+
+.game-iframe-container {
+    position: relative;
+    background: #000;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+.poki-game-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Game Controls */
+.poki-game-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.poki-fullscreen-btn,
+.poki-sound-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.poki-fullscreen-btn:hover,
+.poki-sound-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.poki-exit-fullscreen {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--radius-normal);
+    cursor: pointer;
+    font-weight: 600;
+    display: none;
+}
+
+/* Game Info Bar */
+.poki-game-info-bar {
+    background: #f8f9fa;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.game-rating-section-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-stars-mini-bar {
+    display: flex;
+    gap: 0.15rem;
+}
+
+.star-mini-bar {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.star-mini-bar.filled {
+    color: #ffa500;
+}
+
+.rating-score-mini {
+    font-weight: 700;
+    color: #ffa500;
+    margin-left: 0.5rem;
+}
+
+.rating-count-mini {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 0.25rem;
+}
+
+.game-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.poki-like-btn,
+.poki-dislike-btn,
+.poki-share-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 8px;
+    border-radius: var(--radius-normal);
+    transition: all 0.2s ease;
+}
+
+.poki-like-btn:hover {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.poki-dislike-btn:hover {
+    background: #ffebee;
+    color: #f44336;
+}
+
+.poki-share-btn:hover {
+    background: #f3e5f5;
+    color: #9c27b0;
+}
+
+/* Bottom Games Row */
+.poki-bottom-games {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.poki-bottom-game-item {
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.poki-bottom-game-item .game-card.minimal-card {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.poki-bottom-game-item .game-card.minimal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+/* Content Section */
+.poki-content-section {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.poki-game-description h2,
+.poki-how-to-play h2,
+.poki-game-stats h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.description-content,
+.how-to-play-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Categories and Tags */
+.poki-taxonomy-section {
+    margin: 25px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.poki-categories,
+.poki-tags {
+    margin-bottom: 20px;
+}
+
+.poki-categories h3,
+.poki-tags h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.poki-category-tags,
+.poki-tag-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.poki-category-tag {
+    background: #00d4d4;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.poki-category-tag:hover {
+    background: #00b8b8;
+    transform: translateY(-1px);
+    color: white;
+}
+
+.poki-tag {
+    background: #f8f9fa;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.poki-tag:hover {
+    background: #e9ecef;
+    color: #333;
+    border-color: #dee2e6;
+}
+
+/* Game Stats */
+.stats-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: var(--radius-normal);
+    border: 1px solid #e9ecef;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    font-weight: 500;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Fullscreen Styles */
+.poki-game-iframe.fullscreen-iframe {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 10000 !important;
+    background: #000 !important;
+}
+
+.game-iframe-container:-webkit-full-screen,
+.game-iframe-container:-moz-full-screen,
+.game-iframe-container:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #000 !important;
+}
+
+.game-iframe-container.is-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 999999 !important;
+    background: #000 !important;
+}
+
+body.fullscreen-active {
+    overflow: hidden !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .poki-game-area {
+        grid-template-columns: 100px 1fr 100px;
+        gap: 12px;
+    }
+    
+    .poki-game-item {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .poki-bottom-games {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .poki-style-layout {
+        padding: 15px;
+    }
+    
+    .poki-game-area {
+        grid-template-columns: 80px 1fr 80px;
+        gap: 10px;
+    }
+    
+    .poki-game-item {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .poki-bottom-games {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 6px;
+    }
+    
+    .poki-content-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .poki-style-layout {
+        padding: 10px;
+    }
+    
+    .poki-game-area {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .left-games-column,
+    .right-games-column {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .poki-game-item {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .poki-bottom-games {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+    }
+    
+    .game-header {
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
+    
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    
+    .game-header-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .poki-game-info-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .stats-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .poki-style-layout {
+        padding: 8px;
+    }
+    
+    .poki-game-item {
+        flex: 0 0 70px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .poki-bottom-games {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+    }
+    
+    .poki-content-section {
+        padding: 15px;
+    }
+    
+    .game-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .poki-category-tags,
+    .poki-tag-list {
+        gap: 6px;
+    }
+    
+    .poki-category-tag,
+    .poki-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .poki-bottom-games {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
+    .poki-game-item {
+        flex: 0 0 60px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .poki-style-layout {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] .poki-main-game {
+    background: #2d2d2d;
+}
+
+[data-theme="dark"] .poki-content-section {
+    background: #2d2d2d;
+}
+
+[data-theme="dark"] .poki-game-description h2,
+[data-theme="dark"] .poki-how-to-play h2,
+[data-theme="dark"] .poki-game-stats h2 {
+    color: #fff;
+}
+
+[data-theme="dark"] .description-content,
+[data-theme="dark"] .how-to-play-content {
+    color: #ccc;
+}
+
+[data-theme="dark"] .poki-categories h3,
+[data-theme="dark"] .poki-tags h3 {
+    color: #fff;
+}
+
+[data-theme="dark"] .poki-taxonomy-section {
+    border-top-color: #4a4a4a;
+    border-bottom-color: #4a4a4a;
+}
+
+[data-theme="dark"] .poki-tag {
+    background: #363636;
+    color: #ccc;
+    border-color: #4a4a4a;
+}
+
+[data-theme="dark"] .poki-tag:hover {
+    background: #4a4a4a;
+    color: #fff;
+}
+
+[data-theme="dark"] .stat-item {
+    background: #363636;
+    border-color: #4a4a4a;
+}
+
+[data-theme="dark"] .stat-label {
+    color: #fff;
+}
+
+[data-theme="dark"] .stat-value {
+    color: #ccc;
+}
+
+/* Accessibility */
+.poki-game-item .game-card-link:focus,
+.poki-bottom-game-item .game-card-link:focus {
+    outline: 3px solid #00d4d4;
+    outline-offset: 2px;
+    border-radius: var(--radius-large);
+}
+
+.poki-fullscreen-btn:focus,
+.poki-sound-btn:focus,
+.poki-like-btn:focus,
+.poki-dislike-btn:focus,
+.poki-share-btn:focus {
+    outline: 2px solid #00d4d4;
+    outline-offset: 2px;
+}
+
+.poki-category-tag:focus,
+.poki-tag:focus {
+    outline: 2px solid #00d4d4;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .poki-game-item .game-card.minimal-card,
+    .poki-bottom-game-item .game-card.minimal-card {
+        border: 2px solid #000;
+    }
+    
+    .poki-category-tag {
+        border: 2px solid #fff;
+    }
+    
+    .poki-tag {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .poki-game-item .game-card.minimal-card,
+    .poki-bottom-game-item .game-card.minimal-card,
+    .poki-fullscreen-btn,
+    .poki-sound-btn,
+    .poki-category-tag,
+    .poki-tag {
+        transition: none;
+        animation: none;
+    }
+    
+    .poki-game-item .game-card.minimal-card:hover,
+    .poki-bottom-game-item .game-card.minimal-card:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,340 @@
+/*!
+Pagination Styles
+*/
+
+/* Modern Pagination */
+.modern-pagination {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 1000px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.pagination-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.page-info {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-info::before {
+    content: '📄';
+    font-size: 1.2rem;
+}
+
+.total-games {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    background: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.total-games::before {
+    content: '🎮';
+    font-size: 1rem;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.pagination-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+    color: white;
+}
+
+.pagination-btn:active {
+    transform: translateY(0);
+}
+
+.prev-btn .btn-icon {
+    order: -1;
+}
+
+.next-btn .btn-icon {
+    order: 1;
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.pagination-btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+.prev-btn:hover .btn-icon {
+    transform: translateX(-3px);
+}
+
+.page-numbers-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: 2px solid var(--border-color);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    border: 2px solid transparent;
+}
+
+.page-number:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+.page-number.current {
+    background: var(--primary-color);
+    color: white;
+    cursor: default;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.page-dots {
+    color: var(--text-color);
+    opacity: 0.6;
+    font-weight: bold;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Standard Pagination (Fallback) */
+.games-pagination,
+.blog-pagination {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.page-numbers {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    margin: 0 0.25rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--radius-normal);
+    transition: all 0.3s ease;
+}
+
+.page-numbers:hover,
+.page-numbers.current {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Loading State */
+.pagination.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pagination-controls {
+        gap: 0.75rem;
+    }
+    
+    .pagination-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+        min-width: 100px;
+    }
+    
+    .page-numbers-container {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .page-number {
+        min-width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-pagination {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    .pagination-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .pagination-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .page-numbers-container {
+        order: -1;
+    }
+    
+    .pagination-btn {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-pagination {
+        margin: 1.5rem auto;
+        padding: 1rem;
+    }
+    
+    .page-numbers-container {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    
+    .page-number {
+        min-width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .modern-pagination {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+[data-theme="dark"] .pagination-info {
+    border-bottom-color: #4b5563;
+}
+
+[data-theme="dark"] .total-games {
+    background: #1f2937;
+    border-color: #4b5563;
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .page-numbers-container {
+    background: #1f2937;
+    border-color: #4b5563;
+}
+
+[data-theme="dark"] .page-number {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .page-number:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .pagination-btn,
+    .page-number {
+        border-width: 3px;
+    }
+    
+    .page-number.current {
+        border-width: 3px;
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .pagination-btn,
+    .page-number {
+        transition: none;
+    }
+    
+    .pagination-btn:hover,
+    .page-number:hover {
+        transform: none;
+    }
+    
+    .page-number.current {
+        transform: none;
+    }
+}

@@ -1,0 +1,775 @@
+/*!
+ * Rating System Styles
+ * Star ratings, user rating input, and rating displays
+ */
+
+/* ============================================================================
+   BASE STAR RATING STYLES
+   ============================================================================ */
+
+   .rating-stars, 
+   .rating-stars-mini, 
+   .rating-stars-large {
+       display: inline-flex;
+       align-items: center;
+       gap: 1px;
+   }
+   
+   .star, 
+   .star-mini, 
+   .star-large {
+       color: #ddd;
+       font-size: 1rem;
+       transition: color 0.2s ease;
+       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   }
+   
+   .star.filled, 
+   .star-mini.filled, 
+   .star-large.filled {
+       color: #ffa500;
+   }
+   
+   .star.half, 
+   .star-mini.half, 
+   .star-large.half {
+       color: #ffa500;
+       position: relative;
+   }
+   
+   .star.half::after, 
+   .star-mini.half::after, 
+   .star-large.half::after {
+       content: '★';
+       position: absolute;
+       left: 0;
+       top: 0;
+       width: 50%;
+       overflow: hidden;
+       color: #ffa500;
+   }
+   
+   .star.empty, 
+   .star-mini.empty, 
+   .star-large.empty {
+       color: #ddd;
+   }
+   
+   /* Size Variations */
+   .star-mini {
+       font-size: 0.7rem;
+   }
+   
+   .star-large {
+       font-size: 1.2rem;
+   }
+   
+   .star-header {
+       font-size: 1.5rem;
+   }
+   
+   .star-mini-bar {
+       font-size: 0.8rem;
+   }
+   
+   /* ============================================================================
+      GAME CARD RATING BADGES
+      ============================================================================ */
+   
+   /* Category Badge (Top Left) */
+   .game-category-badge {
+       position: absolute;
+       top: 8px;
+       left: 8px;
+       background: var(--primary-color);
+       color: white;
+       padding: 0.3rem 0.6rem;
+       border-radius: 12px;
+       font-size: 0.7rem;
+       font-weight: 600;
+       z-index: 3;
+       backdrop-filter: blur(10px);
+       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+       transition: all 0.3s ease;
+   }
+   
+   .game-card:hover .game-category-badge {
+       background: var(--secondary-color);
+       transform: scale(1.05);
+   }
+   
+   /* Rating Badge (Top Right) */
+   .game-rating-badge {
+       position: absolute;
+       top: 8px;
+       right: 8px;
+       background: rgba(0, 0, 0, 0.8);
+       color: white;
+       padding: 0.4rem 0.6rem;
+       border-radius: 15px;
+       font-size: 0.7rem;
+       font-weight: 600;
+       z-index: 3;
+       backdrop-filter: blur(10px);
+       display: flex;
+       align-items: center;
+       gap: 0.3rem;
+       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+       transition: all 0.3s ease;
+   }
+   
+   .game-card:hover .game-rating-badge {
+       background: rgba(0, 0, 0, 0.9);
+       transform: scale(1.05);
+   }
+   
+   .rating-value-mini {
+       font-family: 'Courier New', monospace;
+       font-weight: 700;
+       color: #ffa500;
+   }
+   
+   /* ============================================================================
+      GAME CARD RATING OVERLAYS
+      ============================================================================ */
+   
+   /* Rating Overlay in Game Card */
+   .game-rating-overlay {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 0.5rem;
+       margin-bottom: 0.75rem;
+       padding: 0.75rem;
+       background: rgba(255, 255, 255, 0.1);
+       border-radius: 12px;
+       backdrop-filter: blur(10px);
+       border: 1px solid rgba(255, 255, 255, 0.2);
+   }
+   
+   .rating-details {
+       display: flex;
+       align-items: center;
+       gap: 0.5rem;
+       font-size: 0.85rem;
+       color: white;
+   }
+   
+   .rating-score {
+       font-weight: 700;
+       font-size: 1rem;
+       color: #ffa500;
+   }
+   
+   .rating-count {
+       opacity: 0.9;
+       font-size: 0.8rem;
+   }
+   
+   /* Header Rating Display */
+   .game-header-rating {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 0.5rem;
+       margin-top: 1rem;
+   }
+   
+   .rating-stars-header {
+       display: flex;
+       gap: 0.25rem;
+   }
+   
+   .rating-info-header {
+       display: flex;
+       align-items: center;
+       gap: 0.5rem;
+       font-size: 1rem;
+   }
+   
+   .rating-score-header {
+       font-weight: 700;
+       font-size: 1.2rem;
+       color: #ffa500;
+   }
+   
+   .rating-count-header {
+       opacity: 0.9;
+       font-size: 0.9rem;
+   }
+   
+   /* Mini Rating Info Bar */
+   .rating-section-mini {
+       display: flex;
+       align-items: center;
+       gap: 0.5rem;
+   }
+   
+   .rating-stars-mini-bar {
+       display: flex;
+       gap: 0.1rem;
+   }
+   
+   .rating-score-mini {
+       font-weight: 600;
+       color: #ffa500;
+       font-size: 0.9rem;
+   }
+   
+   .rating-count-mini {
+       color: rgba(255, 255, 255, 0.8);
+       font-size: 0.8rem;
+   }
+   
+   /* ============================================================================
+      SINGLE GAME PAGE RATING SECTION
+      ============================================================================ */
+   
+   .game-rating-section {
+       background: var(--card-bg);
+       border-radius: 15px;
+       padding: 2rem;
+       margin: 2rem 0;
+       box-shadow: var(--shadow-lg);
+       border: 1px solid var(--border-color);
+   }
+   
+   .rating-overview {
+       display: grid;
+       grid-template-columns: auto 1fr;
+       gap: 2rem;
+       align-items: center;
+       margin-bottom: 2rem;
+   }
+   
+   .rating-score-large {
+       text-align: center;
+       padding: 1.5rem;
+       background: linear-gradient(135deg, #ffa500, #ff8c00);
+       border-radius: 20px;
+       color: white;
+       min-width: 120px;
+   }
+   
+   .rating-number-large {
+       font-size: 3rem;
+       font-weight: 700;
+       margin-bottom: 0.5rem;
+       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+   }
+   
+   .rating-stars-display {
+       display: flex;
+       justify-content: center;
+       gap: 0.25rem;
+       margin-bottom: 0.5rem;
+   }
+   
+   .rating-stars-display .star {
+       font-size: 1.5rem;
+       color: rgba(255, 255, 255, 0.3);
+   }
+   
+   .rating-stars-display .star.filled {
+       color: white;
+   }
+   
+   .rating-count-large {
+       font-size: 0.9rem;
+       opacity: 0.9;
+       font-weight: 500;
+   }
+   
+   /* ============================================================================
+      RATING BREAKDOWN
+      ============================================================================ */
+   
+   .rating-breakdown {
+       flex: 1;
+   }
+   
+   .rating-breakdown h3 {
+       margin-bottom: 1.5rem;
+       color: var(--primary-color);
+       font-size: 1.3rem;
+   }
+   
+   .rating-row {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+       margin-bottom: 0.75rem;
+   }
+   
+   .rating-label {
+       min-width: 60px;
+       font-size: 0.9rem;
+       color: var(--text-color);
+       display: flex;
+       align-items: center;
+       gap: 0.25rem;
+   }
+   
+   .rating-bar {
+       flex: 1;
+       height: 8px;
+       background: var(--border-color);
+       border-radius: 4px;
+       overflow: hidden;
+   }
+   
+   .rating-fill {
+       height: 100%;
+       background: linear-gradient(90deg, #ffa500, #ff8c00);
+       border-radius: 4px;
+       transition: width 0.3s ease;
+   }
+   
+   .rating-percentage {
+       min-width: 40px;
+       text-align: right;
+       font-size: 0.9rem;
+       color: var(--text-color);
+       opacity: 0.7;
+       font-weight: 500;
+   }
+   
+   /* ============================================================================
+      USER RATING INPUT SECTION
+      ============================================================================ */
+   
+   .user-rating-section {
+       border-top: 1px solid var(--border-color);
+       padding-top: 2rem;
+       margin-top: 2rem;
+   }
+   
+   .user-rating-section h3 {
+       margin-bottom: 1.5rem;
+       color: var(--text-color);
+       font-size: 1.2rem;
+   }
+   
+   .rating-input-container {
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+       align-items: center;
+       padding: 1.5rem;
+       background: var(--bg-color);
+       border-radius: 12px;
+       border: 2px solid var(--border-color);
+       transition: border-color 0.3s ease;
+   }
+   
+   .rating-input-container:hover {
+       border-color: var(--primary-color);
+   }
+   
+   .rating-input {
+       display: flex;
+       gap: 0.5rem;
+       margin-bottom: 1rem;
+   }
+   
+   .rating-star-input {
+       color: var(--border-color);
+       font-size: 2rem;
+       cursor: pointer;
+       transition: all 0.2s ease;
+       user-select: none;
+   }
+   
+   .rating-star-input:hover,
+   .rating-star-input.active,
+   .rating-star-input.highlighted {
+       color: #ffa500;
+       transform: scale(1.1);
+   }
+   
+   .rating-submit {
+       background: var(--primary-color);
+       color: white;
+       border: none;
+       padding: 0.75rem 1.5rem;
+       border-radius: 25px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       font-size: 1rem;
+   }
+   
+   .rating-submit:hover {
+       background: var(--secondary-color);
+       transform: translateY(-2px);
+       box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+   }
+   
+   .rating-submit:disabled {
+       background: var(--border-color);
+       cursor: not-allowed;
+       transform: none;
+       box-shadow: none;
+   }
+   
+   .rating-feedback {
+       font-size: 0.9rem;
+       text-align: center;
+       margin-top: 0.5rem;
+   }
+   
+   /* Already Rated Message */
+   .already-rated-message {
+       text-align: center;
+       padding: 1.5rem;
+       background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+       border-radius: 12px;
+       border: 2px solid rgba(34, 197, 94, 0.2);
+   }
+   
+   .rating-message {
+       font-size: 1.1rem;
+       font-weight: 600;
+       color: #059669;
+       margin-bottom: 1rem;
+   }
+   
+   .user-previous-rating {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 0.5rem;
+   }
+   
+   .rating-date {
+       font-size: 0.9rem;
+       color: var(--text-color);
+       opacity: 0.7;
+       margin: 0;
+   }
+   
+   /* ============================================================================
+      GENERAL RATING DISPLAY COMPONENTS
+      ============================================================================ */
+   
+   .game-rating-display {
+       display: flex;
+       align-items: center;
+       gap: 0.5rem;
+       margin: 0.5rem 0;
+   }
+   
+   .rating-info {
+       display: flex;
+       align-items: center;
+       gap: 0.25rem;
+       font-size: 0.9rem;
+   }
+   
+   .rating-value {
+       font-weight: 600;
+       color: var(--primary-color);
+   }
+   
+   .rating-count {
+       color: var(--text-color);
+       opacity: 0.7;
+       font-size: 0.85rem;
+   }
+   
+   /* ============================================================================
+      RATING ANIMATIONS
+      ============================================================================ */
+   
+   .game-card[data-rating]:hover .game-rating-badge {
+       animation: ratingPulse 2s infinite;
+   }
+   
+   @keyframes ratingPulse {
+       0%, 100% {
+           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+       }
+       50% {
+           box-shadow: 0 4px 16px rgba(255, 165, 0, 0.5);
+       }
+   }
+   
+   .rating-stars-large .star-large {
+       animation: starTwinkle 3s infinite;
+       animation-delay: calc(var(--star-index, 0) * 0.2s);
+   }
+   
+   @keyframes starTwinkle {
+       0%, 90%, 100% {
+           opacity: 1;
+       }
+       95% {
+           opacity: 0.7;
+       }
+   }
+   
+   /* Set animation delays for individual stars */
+   .rating-stars-large .star-large:nth-child(1) { --star-index: 0; }
+   .rating-stars-large .star-large:nth-child(2) { --star-index: 1; }
+   .rating-stars-large .star-large:nth-child(3) { --star-index: 2; }
+   .rating-stars-large .star-large:nth-child(4) { --star-index: 3; }
+   .rating-stars-large .star-large:nth-child(5) { --star-index: 4; }
+   
+   /* ============================================================================
+      RESPONSIVE DESIGN FOR RATINGS
+      ============================================================================ */
+   
+   @media (max-width: 768px) {
+       .rating-overview {
+           grid-template-columns: 1fr;
+           gap: 1.5rem;
+           text-align: center;
+       }
+       
+       .rating-score-large {
+           margin: 0 auto;
+           max-width: 200px;
+       }
+       
+       .rating-number-large {
+           font-size: 2.5rem;
+       }
+       
+       .rating-row {
+           flex-direction: column;
+           gap: 0.5rem;
+           align-items: stretch;
+       }
+       
+       .rating-label {
+           justify-content: center;
+           min-width: auto;
+       }
+       
+       .game-rating-overlay {
+           gap: 0.4rem;
+           padding: 0.5rem;
+       }
+       
+       .rating-details {
+           flex-direction: column;
+           gap: 0.25rem;
+           text-align: center;
+       }
+       
+       .rating-input {
+           gap: 0.25rem;
+       }
+       
+       .rating-star-input {
+           font-size: 1.8rem;
+       }
+       
+       .game-header-rating {
+           gap: 0.4rem;
+       }
+       
+       .rating-info-header {
+           flex-direction: column;
+           gap: 0.25rem;
+       }
+   }
+   
+   @media (max-width: 480px) {
+       .game-category-badge,
+       .game-rating-badge {
+           padding: 0.25rem 0.4rem;
+           font-size: 0.65rem;
+       }
+       
+       .star-mini {
+           font-size: 0.6rem;
+       }
+       
+       .rating-value-mini {
+           font-size: 0.65rem;
+       }
+       
+       .game-rating-section {
+           padding: 1.5rem;
+       }
+       
+       .rating-score-large {
+           padding: 1rem;
+           min-width: 100px;
+       }
+       
+       .rating-number-large {
+           font-size: 2rem;
+       }
+       
+       .rating-stars-display .star {
+           font-size: 1.2rem;
+       }
+       
+       .rating-star-input {
+           font-size: 1.6rem;
+       }
+       
+       .rating-input-container {
+           padding: 1rem;
+       }
+       
+       .rating-submit {
+           padding: 0.6rem 1.2rem;
+           font-size: 0.9rem;
+       }
+       
+       .game-header-rating {
+           margin-top: 0.75rem;
+       }
+       
+       .rating-score-header {
+           font-size: 1.1rem;
+       }
+       
+       .rating-count-header {
+           font-size: 0.85rem;
+       }
+   }
+   
+   /* ============================================================================
+      DARK THEME SUPPORT FOR RATINGS
+      ============================================================================ */
+   
+   [data-theme="dark"] .game-rating-section {
+       background: #374151;
+       border-color: #4b5563;
+   }
+   
+   [data-theme="dark"] .rating-breakdown h3 {
+       color: #f3f4f6;
+   }
+   
+   [data-theme="dark"] .rating-input-container {
+       background: #1f2937;
+       border-color: #4b5563;
+   }
+   
+   [data-theme="dark"] .rating-input-container:hover {
+       border-color: var(--primary-color);
+   }
+   
+   [data-theme="dark"] .user-rating-section h3 {
+       color: #f3f4f6;
+   }
+   
+   [data-theme="dark"] .rating-score-large {
+       background: linear-gradient(135deg, #f59e0b, #d97706);
+   }
+   
+   [data-theme="dark"] .already-rated-message {
+       background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15));
+       border-color: rgba(34, 197, 94, 0.3);
+   }
+   
+   [data-theme="dark"] .rating-message {
+       color: #10b981;
+   }
+   
+   /* ============================================================================
+      HIGH CONTRAST MODE FOR RATINGS
+      ============================================================================ */
+   
+   @media (prefers-contrast: high) {
+       .star.filled,
+       .star-mini.filled,
+       .star-large.filled {
+           color: #ff6600;
+           text-shadow: 0 0 2px #000;
+       }
+       
+       .game-rating-badge {
+           background: rgba(0, 0, 0, 0.95);
+           border: 2px solid #fff;
+       }
+       
+       .game-category-badge {
+           border: 2px solid #fff;
+       }
+       
+       .rating-fill {
+           background: #ff6600;
+       }
+       
+       .rating-input-container {
+           border-width: 3px;
+       }
+       
+       .rating-submit {
+           border: 3px solid var(--primary-color);
+       }
+   }
+   
+   /* ============================================================================
+      REDUCED MOTION SUPPORT
+      ============================================================================ */
+   
+   @media (prefers-reduced-motion: reduce) {
+       .game-rating-badge,
+       .rating-star-input,
+       .star,
+       .star-mini,
+       .star-large,
+       .rating-submit {
+           animation: none;
+           transition: none;
+       }
+       
+       .rating-star-input:hover {
+           transform: none;
+       }
+       
+       .game-card:hover .game-rating-badge,
+       .game-card:hover .game-category-badge {
+           transform: none;
+       }
+       
+       .rating-submit:hover {
+           transform: none;
+       }
+   }
+   
+   /* ============================================================================
+      PRINT STYLES FOR RATINGS
+      ============================================================================ */
+   
+   @media print {
+       .game-rating-badge,
+       .game-category-badge {
+           background: #f0f0f0 !important;
+           color: #333 !important;
+           border: 1px solid #ddd !important;
+       }
+       
+       .star.filled,
+       .star-mini.filled,
+       .star-large.filled {
+           color: #333 !important;
+       }
+       
+       .game-rating-overlay {
+           background: #f8f8f8 !important;
+           color: #333 !important;
+           border: 1px solid #ddd !important;
+       }
+       
+       .rating-score-large {
+           background: #f0f0f0 !important;
+           color: #333 !important;
+           border: 2px solid #ddd !important;
+       }
+       
+       .user-rating-section {
+           display: none;
+       }
+       
+       .rating-input-container {
+           display: none;
+       }
+   }

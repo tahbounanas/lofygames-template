@@ -1,0 +1,711 @@
+/*!
+ * Archive Page Styles
+ * Category, tag, and custom post type archive pages
+ */
+
+/* ============================================================================
+   ARCHIVE HEADER STYLES
+   ============================================================================ */
+
+   .archive-header {
+    background: var(--gradient);
+    color: white;
+    padding: 3rem 0 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.enhanced-archive-header {
+    background: var(--gradient);
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.enhanced-archive-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="archive-grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23archive-grid)"/></svg>');
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.enhanced-archive-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.archive-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seo-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.archive-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Archive Meta Information */
+.archive-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.games-count-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.count-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.count-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.archive-type {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+
+.archive-type-badge {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.games-badge { color: #10b981; }
+.category-badge { color: #f59e0b; }
+.tag-badge { color: #8b5cf6; }
+
+/* Archive Featured Image */
+.archive-image {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.archive-featured-image {
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================================
+   ARCHIVE CONTENT SECTIONS
+   ============================================================================ */
+
+.archive-games-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.archive-categories {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+/* ============================================================================
+   SEO DESCRIPTION SECTION
+   ============================================================================ */
+
+.archive-description-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+    box-shadow: var(--shadow-lg);
+    border-left: 5px solid var(--primary-color);
+}
+
+.seo-content {
+    position: relative;
+}
+
+.description-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+/* SEO Features Section */
+.seo-features {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.seo-features h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.features-list li {
+    background: var(--bg-color);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.features-list li:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.features-list li strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Related Terms */
+.related-terms {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.related-terms h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.terms-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.term-link {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.term-link:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+    color: white;
+}
+
+/* ============================================================================
+   NO GAMES FOUND STATE
+   ============================================================================ */
+
+.no-games {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+    margin: 2rem auto;
+    max-width: 600px;
+    border: 2px solid var(--border-color);
+}
+
+.no-games h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.no-games p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.no-games .button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.no-games .button:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+    color: white;
+}
+
+/* ============================================================================
+   ENHANCED BREADCRUMBS
+   ============================================================================ */
+
+.enhanced-breadcrumbs {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.breadcrumb-item {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb-separator {
+    margin: 0 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+.breadcrumb-current {
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .archive-header,
+    .enhanced-archive-header {
+        padding: 2rem 0 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .archive-title,
+    .seo-title {
+        font-size: 2rem;
+    }
+    
+    .archive-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .archive-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .games-count-badge {
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .count-number {
+        font-size: 1.3rem;
+    }
+    
+    .archive-featured-image {
+        max-width: 250px;
+    }
+    
+    .archive-description-section {
+        padding: 2rem;
+        margin: 2rem auto;
+    }
+    
+    .description-title {
+        font-size: 1.6rem;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .features-list li {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .terms-cloud {
+        gap: 0.5rem;
+    }
+    
+    .term-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .no-games {
+        padding: 3rem 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    .no-games h2 {
+        font-size: 1.6rem;
+    }
+    
+    .no-games p {
+        font-size: 1rem;
+    }
+    
+    .no-games .button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .breadcrumb-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .enhanced-breadcrumbs {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .archive-header,
+    .enhanced-archive-header {
+        padding: 1.5rem 0 1rem;
+    }
+    
+    .archive-title,
+    .seo-title {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+    }
+    
+    .archive-description {
+        font-size: 0.95rem;
+    }
+    
+    .games-count-badge {
+        padding: 0.5rem 1rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+    
+    .count-number {
+        font-size: 1.2rem;
+    }
+    
+    .count-label {
+        font-size: 0.9rem;
+    }
+    
+    .archive-type-badge {
+        font-size: 0.8rem;
+    }
+    
+    .archive-featured-image {
+        max-width: 200px;
+    }
+    
+    .archive-description-section {
+        padding: 1.5rem;
+    }
+    
+    .description-title {
+        font-size: 1.4rem;
+    }
+    
+    .seo-features {
+        padding: 1.5rem;
+    }
+    
+    .seo-features h3 {
+        font-size: 1.2rem;
+    }
+    
+    .features-list li {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .related-terms h4 {
+        font-size: 1.1rem;
+    }
+    
+    .term-link {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .no-games {
+        padding: 2rem 1rem;
+    }
+    
+    .no-games h2 {
+        font-size: 1.4rem;
+    }
+    
+    .no-games .button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .enhanced-breadcrumbs {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.3rem;
+    }
+}
+
+/* ============================================================================
+   DARK THEME SUPPORT
+   ============================================================================ */
+
+[data-theme="dark"] .archive-description-section {
+    background: #374151;
+    border-left-color: var(--primary-color);
+}
+
+[data-theme="dark"] .description-title {
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .description-text {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .seo-features {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
+    border-color: #4b5563;
+}
+
+[data-theme="dark"] .seo-features h3 {
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .features-list li {
+    background: #1f2937;
+    border-left-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .related-terms {
+    border-top-color: #4b5563;
+}
+
+[data-theme="dark"] .related-terms h4 {
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .no-games {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+[data-theme="dark"] .no-games h2 {
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .no-games p {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .archive-categories {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+    .archive-header,
+    .enhanced-archive-header {
+        border: 3px solid #fff;
+    }
+    
+    .games-count-badge,
+    .enhanced-breadcrumbs {
+        border-width: 3px;
+    }
+    
+    .features-list li {
+        border-left-width: 6px;
+    }
+    
+    .term-link {
+        border-width: 3px;
+    }
+    
+    .no-games {
+        border-width: 3px;
+    }
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .features-list li,
+    .term-link,
+    .no-games .button,
+    .breadcrumb-item {
+        transition: none;
+        animation: none;
+    }
+    
+    .features-list li:hover {
+        transform: none;
+    }
+    
+    .term-link:hover,
+    .no-games .button:hover {
+        transform: none;
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    .archive-header,
+    .enhanced-archive-header {
+        background: #f8f9fa !important;
+        color: #333 !important;
+        border: 2px solid #dee2e6;
+    }
+    
+    .archive-title,
+    .seo-title {
+        color: #333 !important;
+        text-shadow: none !important;
+    }
+    
+    .archive-description {
+        color: #666 !important;
+    }
+    
+    .games-count-badge,
+    .enhanced-breadcrumbs {
+        background: #e9ecef !important;
+        color: #333 !important;
+        border-color: #ced4da !important;
+    }
+    
+    .archive-categories,
+    .enhanced-breadcrumbs {
+        display: none;
+    }
+    
+    .term-link {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+        border-color: #ddd !important;
+    }
+}
